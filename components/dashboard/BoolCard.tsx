@@ -27,22 +27,19 @@ const BoolCard = ({
 	return (
 		<Card
 			className={cn(
-				'md:aspect-square select-auto text-center',
+				'select-none flex items-center justify-center',
 				className
 			)}
 		>
-			<CardHeader>
+
 				<CardTitle>{title}</CardTitle>
-			</CardHeader>
-			<CardContent className="flex items-center justify-center h-12">
-				<div className=" border border-foreground rounded-full p-4">
+			<div className=" border border-foreground rounded-full p-4">
 					{isActivate ? (
 						<ActivateIcon className="w-10 h-10" />
 					) : (
 						DeactivateIcon && <DeactivateIcon className="w-10 h-10" />
 					)}
 				</div>
-			</CardContent>
 		</Card>
 	)
 }

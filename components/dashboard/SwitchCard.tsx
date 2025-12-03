@@ -29,23 +29,20 @@ const SwitchCard = ({
 	return (
 		<Card
 			className={cn(
-				'md:aspect-square cursor-pointer select-auto text-center',
+				'cursor-pointer select-none flex items-center justify-center',
 				className
 			)}
 			onClick={() => setIsActivate((state) => !state)}
 		>
-			<CardHeader>
-				<CardTitle>{title}</CardTitle>
-			</CardHeader>
-			<CardContent className="flex items-center justify-center h-12">
-				<div className=" border border-foreground rounded-full p-4">
-					{isActivate ? (
-						<ActivateIcon className="w-10 h-10" />
-					) : (
-						DeactivateIcon && <DeactivateIcon className="w-10 h-10" />
-					)}
-				</div>
-			</CardContent>
+			<CardTitle>{title}</CardTitle>
+
+			<div className=" border border-foreground rounded-full p-4">
+				{isActivate ? (
+					<ActivateIcon className="w-10 h-10" />
+				) : (
+					DeactivateIcon && <DeactivateIcon className="w-10 h-10" />
+				)}
+			</div>
 		</Card>
 	)
 }

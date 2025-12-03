@@ -23,23 +23,7 @@ import NightCard from '@/components/dashboard/NightCard'
 import RainCard from '@/components/dashboard/RainCard'
 
 export default function Home() {
-	const wsRef = useRef<WebSocket | null>(null)
 
-	// useEffect(() => {
-	// 	if(wsRef.current) {
-	// 		return
-	// 	}
-
-	// 	wsRef.current = new WebSocket("ws://localhost:8000/ws")
-
-	// 	wsRef.current.onmessage = (ev) => {
-	// 	console.log(ev)
-	// 	};
-
-	// 	return () => {
-	// 	wsRef.current?.close();
-	// 	};
-	// }, [])
 
 	return (
 		<main className="p-12">
