@@ -1,8 +1,6 @@
-import { Dispatch, JSX, ReactElement, SetStateAction, useState } from 'react'
+import { MouseEventHandler } from 'react'
 import {
 	Card,
-	CardContent,
-	CardHeader,
 	CardTitle,
 } from '@/components/ui/card'
 
@@ -15,7 +13,8 @@ type SwitchCardProps = {
 	DeactivateIcon?: LucideIcon
 	className?: string
 	isActivate: boolean
-	setIsActivate: Dispatch<SetStateAction<boolean>>
+	onClick: MouseEventHandler<HTMLDivElement>
+	disabled?: boolean
 }
 
 const SwitchCard = ({
@@ -24,15 +23,17 @@ const SwitchCard = ({
 	DeactivateIcon,
 	className,
 	isActivate,
-	setIsActivate,
+	onClick,
+	disabled = false
 }: SwitchCardProps) => {
 	return (
 		<Card
 			className={cn(
-				'cursor-pointer select-none flex items-center justify-center',
+				'select-none flex items-center justify-center',
+				disabled ? 'cursor-auto opacity-60' : 'cursor-pointer',
 				className
 			)}
-			onClick={() => setIsActivate((state) => !state)}
+			onClick={onClick}
 		>
 			<CardTitle>{title}</CardTitle>
 

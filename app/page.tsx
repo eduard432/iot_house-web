@@ -36,7 +36,7 @@ export default function Home() {
 				<NightCard sensor_device_id={6} />
 
 				<GarageCard device_id={2} />
-				<LEDCard device_id={2} />
+				<LEDCard LEDIndex={6} device_id={6} />
 				{[...Array(10)].map((i) => {
 					return (
 						<Card key={i}>
