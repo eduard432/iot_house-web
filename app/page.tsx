@@ -28,14 +28,15 @@ export default function Home() {
 	return (
 		<main className="p-12">
 			<section className="grid grid-cols-1 md:grid-cols-8 gap-4 md:gap-y-4 gap-y-6">
-				<LEDCard device_id={2} />
-				<GarageCard device_id={2} />
 				<TemperatureCard  sensor_device_id={1} />
 				<HumidityCard sensor_device_id={2} />
 				<AirQualityCard sensor_device_id={3} />
-				<CarCard device_id={5} />
-				<NightCard device_id={12} />
-				<RainCard device_id={4} />
+				<CarCard sensor_device_id={4} />
+				<RainCard sensor_device_id={5} />
+				<NightCard sensor_device_id={6} />
+
+				<GarageCard device_id={2} />
+				<LEDCard device_id={2} />
 				{[...Array(10)].map((i) => {
 					return (
 						<Card key={i}>
